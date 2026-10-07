@@ -4,7 +4,7 @@ compatibility_date = "2024-12-01"
 compatibility_flags = ["nodejs_compat"]
 
 [vars]
-APP_URL = "https://getengram.app"
+APP_URL = "https://engram-mcp-server.me3442.workers.dev"
 
 # Secrets (set via `wrangler secret put`):
 #   SUPABASE_JWT_SECRET     — Supabase project JWT secret (HS256, from dashboard → Settings → API)
@@ -16,7 +16,7 @@ APP_URL = "https://getengram.app"
 [[d1_databases]]
 binding = "DB"
 database_name = "engram-db"
-database_id = "fcf57f81-8d26-4288-aee5-11c42d6ca0d5"
+database_id = "e364e375-99cb-4e2d-9385-fdc403302bcd"
 migrations_dir = "../../packages/db/migrations"
 
 # Verbatim message content lives here (unbounded), keyed by message id. D1
@@ -48,11 +48,6 @@ new_sqlite_classes = ["DrainerDO"]
 
 [ai]
 binding = "AI"
-
-# Custom domain — serves MCP at mcp.getengram.app
-[[routes]]
-pattern = "mcp.getengram.app/*"
-zone_name = "getengram.app"
 
 # Crons — every-minute content drain (D1 -> R2, no-op once drained);
 # 03:00 GDPR purge of soft-deleted orgs; 13:00 daily ops report (built
